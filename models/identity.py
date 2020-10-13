@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """ this module builds Identity class """
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, ForeignKey, String
+from models.profile import profile_identities
+from sqlalchemy.orm import relationship
 
 
 class Identity(Basemodel, Base):
     """ this module defines Identity class """
     __tablename__ = "identities"
-    name = Column(String(60), nullable=False)
-    people_id = Column(String(60), ForiegnKey(people.id), nullable=False)
+    profile_identities = relationship('Profile',
+                                      secondary=profile_identities,
+                                      backref='identities')
