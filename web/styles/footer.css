@@ -1,0 +1,18 @@
+.footer {
+  padding: 5px;
+  text-align: right;
+  background: #7CB4B8;
+  color: white;
+  font-size: 20px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;x;
+  border-radius: 15px;
+  border-style: groove;
+  border: 25px, groove;
+  border-color: #524948;
+  border-radius: 15px;
+}
+.footer img {
+  float: left;
+  margin-left: 1025px;
+  margin-top: 8px;
+}
