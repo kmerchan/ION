@@ -6,30 +6,30 @@ from sqlalchemy.orm import relationship
 
 
 profile_skills = Table("profile_skills",
-                     Base.metadata,
-                     Column('profile.id',
-                            String(60),
-                            ForeignKey('profile.id'),
-                            nullable=False,
-                            primary_key=True),
-                      Column('skill.id',
-                             String(60),
-                             ForeignKey('skill.id'),
-                             nullable=False,
-                             primary_key=True))
+                       Base.metadata,
+                       Column('profile.id',
+                              String(60),
+                              ForeignKey('profile.id'),
+                              nullable=False,
+                              primary_key=True),
+                       Column('skill.id',
+                              String(60),
+                              ForeignKey('skill.id'),
+                              nullable=False,
+                              primary_key=True))
 
 profile_identities = Table("profile_identities",
-                     Base.metadata,
-                     Column('profile.id',
-                            String(60),
-                            ForeignKey('profile.id'),
-                            nullable=False,
-                            primary_key=True),
-                      Column('identity.id',
-                             String(60),
-                             ForeignKey('identity.id'),
-                             nullable=False,
-                             primary_key=True))
+                           Base.metadata,
+                           Column('profile.id',
+                                  String(60),
+                                  ForeignKey('profile.id'),
+                                  nullable=False,
+                                  primary_key=True),
+                           Column('identity.id',
+                                  String(60),
+                                  ForeignKey('identity.id'),
+                                  nullable=False,
+                                  primary_key=True))
 
 
 class Profile(BaseModel, Base):

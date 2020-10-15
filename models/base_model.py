@@ -4,7 +4,8 @@ from datetime import datetime
 from models import storage
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.types import DateTime
-from sqlachemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
+from uuid import uuid4
 Base = declarative_base()
 
 
@@ -27,6 +28,10 @@ class BaseModel():
         if kwargs:
             del kwargs['__class__']
             self.__dict__.update(kwargs)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """this method returns a string representation of the instance"""

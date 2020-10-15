@@ -77,6 +77,7 @@ class Test_BaseModel_Docs(TestCase):
                                 "{} method is missing docstring".
                                 format(method[0]))
 
+
 class Test_BaseModel(TestCase):
     """
     defines tests to check functionality
