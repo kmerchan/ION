@@ -41,9 +41,9 @@ class BaseModel():
     def save(self):
         """ this method updates time of change then saves new info """
         self.updated_at = datetime.utcnow()
-        storage.new(self)
-        storage.save()
+        # storage.new(self)
+        # storage.save()
 
     def delete(self):
         """ this method deletes current instance from DBStorage """
-        storage.delete(self)
+        # storage.delete(self)
