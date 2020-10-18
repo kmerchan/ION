@@ -26,7 +26,14 @@ class BaseModel():
     def __init__(self, *args, **kwargs):
         """this method instantiates a new model from kwargs"""
         if kwargs:
-            del kwargs['__class__']
+            if '__class__' in kwargs:
+                del kwargs['__class__']
+            if 'id' not in kwargs:
+                self.id = str(uuid4())
+            if 'created_at' not in kwargs:
+                self.created_at = datetime.now()
+            if 'updated_at' not in kwargs:
+                self.updated_at = datetime.now()
             self.__dict__.update(kwargs)
         else:
             self.id = str(uuid4())
@@ -35,8 +42,9 @@ class BaseModel():
 
     def __str__(self):
         """this method returns a string representation of the instance"""
-        cls = (str(type(self)))
-        return "[{}.{}] {}".format(cls, self.id, self.__dict__)
+        return "[{}.{}] {}".format(self.__class__.__name__,
+                                   self.id,
+                                   self.__dict__)
 
     def save(self):
         """ this method updates time of change then saves new info """

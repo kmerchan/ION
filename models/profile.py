@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """ this module builds Profile class """
+import models
 from models.base_model import BaseModel, Base
+from models.identity import Identity
+from models.skills import Skills
 from sqlalchemy import Column, ForeignKey, String, Table
 from sqlalchemy.orm import relationship
 
@@ -40,7 +43,7 @@ class Profile(BaseModel, Base):
     password = Column(String(128))
     company_school_name = Column(String(256))
     about_me = Column(String(1024))
-    LinkedIn = Column(String(256))
+    linkedin = Column(String(256))
     social_media = Column(String(1024))
     skills = relationship('Skills',
                           secondary=profile_skills,
@@ -50,3 +53,9 @@ class Profile(BaseModel, Base):
                               secondary=profile_identities,
                               backref='profile',
                               viewonly=False)
+
+    def __init__(self, *args, **kwargs):
+        """
+        calls on BaseModel __init__ method to instantiate Profile object
+        """
+        super().__init__(*args, **kwargs)
