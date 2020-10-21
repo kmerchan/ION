@@ -143,10 +143,6 @@ class Test_BaseModel(TestCase):
         # saves instance of BaseModel, getting timestamp of updated_at before
         original_updated_at = new_obj1.updated_at
         sleep(1)
-        new_obj1.save()
-        # tests that the object's updated_at has changed and is later
-        self.assertNotEqual(original_updated_at, new_obj1.updated_at)
-        self.assertTrue(original_updated_at < new_obj1.updated_at)
         # creates another instance, getting timestamps before and after
         sleep(1)
         third_time = datetime.now()
@@ -220,7 +216,7 @@ class Test_BaseModel(TestCase):
         self.assertEqual(str(new_obj),
                          "[BaseModel.{}] {}".format(obj_id, obj_dict))
 
-    def test_save_method(self):
-        """
-        tests the save method changes the update_at time and saves to database
-        """
+    # save() and delete() methods are tested in subclass unit tests:
+    # tested in subclasses because these methods call on database storage
+    # to map class information to database
+    # BaseModel is the base for other classes, but not stored in MySQL tables

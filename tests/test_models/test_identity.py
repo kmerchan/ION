@@ -8,7 +8,8 @@ from inspect import getmembers, isfunction
 from models.base_model import BaseModel
 from models.identity import Identity, __doc__ as identity_doc
 import pep8
-from unittest import TestCase
+from time import sleep
+from unittest import TestCase, mock
 
 
 class Test_Identity_Docs(TestCase):
@@ -123,6 +124,31 @@ class Test_Identity(TestCase):
                 # tests the attribute is the expected type
                 self.assertIs(type(new_obj.__dict__[attr]), attr_type)
 
+    def test_updated_datetime_attributes(self):
+        """
+        tests that the datetime attribute updated_at changes
+        when the save() method is implemented
+        """
+        first_time = datetime.now()
+        new_obj = Identity()
+        second_time = datetime.now()
+        # tests if object's created_at time is between timestamps
+        self.assertTrue(first_time <= new_obj.created_at <= second_time)
+        # tests if object's updated_at is within the same timestamps
+        self.assertTrue(first_time <= new_obj.updated_at <= second_time)
+        # gets timestamps of current attributes and pauses a moment
+        original_created_at = new_obj.created_at
+        original_updated_at = new_obj.updated_at
+        sleep(1)
+        # adds required attributes so the object can be saved; saves object
+        new_obj.name = "test_name"
+        new_obj.save()
+        # tests that the object's updated_at has changed and is later
+        self.assertNotEqual(original_updated_at, new_obj.updated_at)
+        self.assertTrue(original_updated_at < new_obj.updated_at)
+        # tests that only the object's updated_at datetime has changed
+        self.assertEqual(original_created_at, new_obj.created_at)
+
     def test_init_method(self):
         """
         tests the __init__ method for instantiating new objects
@@ -182,3 +208,42 @@ class Test_Identity(TestCase):
         # tests the string representation of object is formatted correctly
         self.assertEqual(str(new_obj),
                          "[Identity.{}] {}".format(obj_id, obj_dict))
+
+    @mock.patch('models.storage')
+    def test_save_method(self, mock_storage):
+        """
+        tests that the save() method inherited from BaseModel calls on
+        storage.new() to add and commit the object to the database
+        """
+        # creates new instance of Identity
+        new_obj = Identity()
+        # adds name as required attribute for database
+        # (id should be set by primary key)
+        # (created_at, updated_at should be set by datetime)
+        new_obj.name = "test_name"
+        # saves new instance and tests if storage method new is called
+        new_obj.save()
+        self.assertTrue(mock_storage.new.called)
+
+    @mock.patch('models.storage')
+    def test_delete_method(self, mock_storage):
+        """
+        tests that the delete() method inherited from BaseModel calls on
+        storage.delete() to remove and commit the object from the database
+        """
+        # creates new instance of Identity
+        new_obj = Identity()
+        # adds name as required attribute for database
+        # (id should be set by primary key)
+        # (created_at, updated_at should be set by datetime)
+        new_obj.name = "test_name"
+        # saves to database before attempting to delete
+        new_obj.save()
+        self.assertTrue(mock_storage.new.called)
+        # deletes new instance and tests if storage method deleted is called
+        new_obj.delete()
+        self.assertTrue(mock_storage.delete.called)
+
+    # functionality of save() and delete() methods are tested in unit tests
+    # for DBStorage as the storage engine is doing the work to actually
+    # save or delete the objects from the database
