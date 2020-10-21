@@ -14,7 +14,7 @@ from unittest import TestCase
 class Test_Identity_Docs(TestCase):
     """
     defines tests to check documentation and style
-    for Identity class
+    for Identity module, class, and methods
     """
 
     @classmethod

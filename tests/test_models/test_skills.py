@@ -14,7 +14,7 @@ from unittest import TestCase
 class Test_Skills_Docs(TestCase):
     """
     defines tests to check documentation and style
-    for Skills class
+    for Skills module, class, and methods
     """
 
     @classmethod

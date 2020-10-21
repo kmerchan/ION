@@ -14,7 +14,7 @@ from unittest import TestCase
 class Test_BaseModel_Docs(TestCase):
     """
     defines tests to check documentation and style
-    for BaseModel class
+    for BaseModel module, class, and methods
     """
 
     @classmethod

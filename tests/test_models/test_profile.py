@@ -14,7 +14,7 @@ from unittest import TestCase
 class Test_Profile_Docs(TestCase):
     """
     defines tests to check documentation and style
-    for Profile class
+    for Profile module, class, and methods
     """
 
     @classmethod
