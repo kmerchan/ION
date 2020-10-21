@@ -41,19 +41,57 @@ class DBStorage():
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
-        """ this public instance method queries curent DB session """
-
-    def new(self, obj):
-        """ this public instance method adds object to current DB session """
+        """
+        this method queries all or specific class from database
+        returns dictionary of all objects
+        """
+        all_dict = {}
+        # loops through known classes defined at the top of this module
+        for class_name in classes:
+            # if no class is specified or class matches (by cls parameter)
+            if cls is None or cls == class_name:
+                # queries all objects based on class
+                objs = self.__session.query(classes[class_name]).all()
+                # for each object, sets key and saves key with obj as value
+                for obj in objs:
+                    key = "{}.{}".format(obj.__class__.__name__,
+                                         obj.id)
+                    all_dict[key] = obj
+        return (all_dict)
 
     def save(self):
         """ this method commits changes to current DB session """
+        self.__session.commit()
+
+    def new(self, obj=None):
+        """ this method adds object to current DB session and saves """
+        if obj is not None:
+            # if object exists, adds it to current session
+            self.__session.add(obj)
+            # calls on save method to commmit recent add to save to database
+            self.save()
 
     def delete(self, obj=None):
-        """ this public instance method deletes obj from current DB session """
+        """ this method deletes obj from current DB session and saves """
+        if obj is not None:
+            # if object exists, removes it from current session
+            del obj
+            # calls on save method to commit recent del to save to database
+            self.save()
 
     def reload(self):
         """
-        this public instance method creates tables from current DB session,
-        creates current DB session from the engine
+        this method binds current engine to a scoped session
+        connects current session to MySQL database
         """
+        Base.metadata.create_all(self.__engine)
+        session_factory = sessionmaker(bind=self.__engine,
+                                       expire_on_commit=False)
+        Session = scoped_session(session_factory)
+        self.__session = Session()
+
+    def close(self):
+        """
+        this method closes the current session using method from Session class
+        """
+        self.__session.close()

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ this module builds BaseModel class """
 from datetime import datetime
-from models import storage
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.types import DateTime
 from sqlalchemy.ext.declarative import declarative_base
@@ -49,9 +48,12 @@ class BaseModel():
     def save(self):
         """ this method updates time of change then saves new info """
         self.updated_at = datetime.utcnow()
-        # storage.new(self)
-        # storage.save()
+        from models import storage
+        # storage.new method adds new obj and calls save() to commit changes
+        storage.new(self)
 
     def delete(self):
         """ this method deletes current instance from DBStorage """
-        # storage.delete(self)
+        from models import storage
+        # storage.delete method removes obj and calls save() to commit changes
+        storage.delete(self)
