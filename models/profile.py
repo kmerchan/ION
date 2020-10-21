@@ -10,27 +10,27 @@ from sqlalchemy.orm import relationship
 
 profile_skills = Table("profile_skills",
                        Base.metadata,
-                       Column('profile.id',
+                       Column('profiles.id',
                               String(60),
-                              ForeignKey('profile.id'),
+                              ForeignKey('profiles.id'),
                               nullable=False,
                               primary_key=True),
-                       Column('skill.id',
+                       Column('skills.id',
                               String(60),
-                              ForeignKey('skill.id'),
+                              ForeignKey('skills.id'),
                               nullable=False,
                               primary_key=True))
 
 profile_identities = Table("profile_identities",
                            Base.metadata,
-                           Column('profile.id',
+                           Column('profiles.id',
                                   String(60),
-                                  ForeignKey('profile.id'),
+                                  ForeignKey('profiles.id'),
                                   nullable=False,
                                   primary_key=True),
-                           Column('identity.id',
+                           Column('identities.id',
                                   String(60),
-                                  ForeignKey('identity.id'),
+                                  ForeignKey('identities.id'),
                                   nullable=False,
                                   primary_key=True))
 
@@ -49,7 +49,7 @@ class Profile(BaseModel, Base):
                           secondary=profile_skills,
                           backref='profile',
                           viewonly=False)
-    identities = relationship('Identities',
+    identities = relationship('Identity',
                               secondary=profile_identities,
                               backref='profile',
                               viewonly=False)

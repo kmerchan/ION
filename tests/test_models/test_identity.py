@@ -5,6 +5,7 @@ testing functionality and documentation
 """
 from datetime import datetime
 from inspect import getmembers, isfunction
+from models.base_model import BaseModel
 from models.identity import Identity, __doc__ as identity_doc
 import pep8
 from unittest import TestCase
@@ -135,7 +136,7 @@ class Test_Identity(TestCase):
         # adds all attributes for testing
         # (id should be set by primary key)
         # (created_at, updated_at should be set by datetime)
-        new_obj.name = "test_name"
+        new_obj1.name = "test_name"
         # attributes_dict sets up dictionary of attribute names and types
         attributes_dict = {
             "id": str,
@@ -152,7 +153,7 @@ class Test_Identity(TestCase):
                 self.assertIs(type(new_obj1.__dict__[attr]), attr_type)
         # sets kwargs using object's dict and uses to create new object
         kwargs = new_obj1.__dict__
-        new_obj2 = Profile(**kwargs)
+        new_obj2 = Identity(**kwargs)
         # tests that the new object is of type Identity
         self.assertIs(type(new_obj2), Identity)
         # loops through attributes_dict as subTests to check each attribute

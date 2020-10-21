@@ -5,6 +5,7 @@ testing functionality and documentation
 """
 from datetime import datetime
 from inspect import getmembers, isfunction
+from models.base_model import BaseModel
 from models.profile import Profile, __doc__ as profile_doc
 import pep8
 from unittest import TestCase
@@ -147,13 +148,13 @@ class Test_Profile(TestCase):
         # adds all attributes for testing
         # (id should be set by primary key)
         # (created_at, updated_at should be set by datetime)
-        new_obj.name = "test_name"
-        new_obj.email = "test@testing.com"
-        new_obj.password = "test_password_123"
-        new_obj.company_school_name = "123"
-        new_obj.about_me = "This is for testing purposes"
-        new_obj.linkedin = "https://www.linkedin.com/in/test"
-        new_obj.social_media = "Social media links would go here"
+        new_obj1.name = "test_name"
+        new_obj1.email = "test@testing.com"
+        new_obj1.password = "test_password_123"
+        new_obj1.company_school_name = "123"
+        new_obj1.about_me = "This is for testing purposes"
+        new_obj1.linkedin = "https://www.linkedin.com/in/test"
+        new_obj1.social_media = "Social media links would go here"
         # attributes_dict sets up dictionary of attribute names and types
         attributes_dict = {
             "id": str,

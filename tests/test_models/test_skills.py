@@ -5,6 +5,7 @@ testing functionality and documentation
 """
 from datetime import datetime
 from inspect import getmembers, isfunction
+from models.base_model import BaseModel
 from models.skills import Skills, __doc__ as skills_doc
 import pep8
 from unittest import TestCase
@@ -135,7 +136,7 @@ class Test_Skills(TestCase):
         # adds all attributes for testing
         # (id should be set by primary key)
         # (created_at, updated_at should be set by datetime)
-        new_obj.name = "test_name"
+        new_obj1.name = "test_name"
         # attributes_dict sets up dictionary of attribute names and types
         attributes_dict = {
             "id": str,
