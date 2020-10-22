@@ -15,6 +15,8 @@ INSERT PROJECT OVERVIEW/DESCRIPTION
 Please visit the ION website [here](http://34.121.53.105/) to build diversity in Oklahoma STEM through visibility and connection!
 <img src="https://i.ibb.co/17FFwNx/Screenshot-2020-10-22-at-1-17-56-PM.png" alt="ION website" border="0">
 
+If you would like to add your profile information to the website, please fill out this [sign up form](https://forms.gle/Jp9YPVPZgxaS7ZAXA) and your profile will be created and added for others to connect with you.  Thank you!
+
 ## Installation and Usage
 If you are hoping to access and utilize the ION site as a user, please click on the link above to access the website in your browser. However, if you are trying to run the source code for the project, please follow these installation and usage steps to configure your web server:
 ### Web Server Configuration:
@@ -153,10 +155,10 @@ Subclasses of Base Model:
 
 [new_common.css](/web/styles/new_common.css) - STACI PLEASE FIX
 
-## Bugs
+### Bugs
 No known bugs at this time. Please contact authors Kelsie or Staci if you find a bug.
 
-# Authors
+## Authors
 Kelsie Merchant - [GitHub](https://github.com/kmerchan/) / [email: kelsie.merchant@holbertonschool.com](kelsie.merchant@holbertonschool.com)
 
 Staci Aaenson-Fletcher - [GitHub](https://github.com/StaciAF) / [email: staci.aaensonfletcher@holbertonschool.com](staci.aaensonfletcher@holbertonschool.com)
