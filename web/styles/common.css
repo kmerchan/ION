@@ -46,7 +46,6 @@ h8 {
     padding-top: 10px;
 }
 #search {
-    margin-left: 300px;
     background-color: #57467B;
 }
 #search:hover {
@@ -56,6 +55,7 @@ h8 {
 }
 .row {
     display: flex;
+    justify-content: space-evenly;
 }
 .column {
     flex: 50%;
@@ -136,8 +136,6 @@ h8 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 150px;
-    overflow: hidden;
     background-color: #57467B;
     z-index: 1;
 }
@@ -160,8 +158,6 @@ h8 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 300px;
-    overflow: hidden;
     background-color: #57467B;
     z-index: -1;
 }
