@@ -49,7 +49,7 @@ class DBStorage():
         # loops through known classes defined at the top of this module
         for class_name in classes:
             # if no class is specified or class matches (by cls parameter)
-            if cls is None or cls == class_name:
+            if cls is None or cls == class_name or cls == classes[class_name]:
                 # queries all objects based on class
                 objs = self.__session.query(classes[class_name]).all()
                 # for each object, sets key and saves key with obj as value
@@ -75,7 +75,7 @@ class DBStorage():
         """ this method deletes obj from current DB session and saves """
         if obj is not None:
             # if object exists, removes it from current session
-            del obj
+            self.__session.delete(obj)
             # calls on save method to commit recent del to save to database
             self.save()
 
