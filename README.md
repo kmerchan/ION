@@ -1,5 +1,5 @@
 # Inclusive Oklahoma Network (ION)
-INSERT PROJECT OVERVIEW/DESCRIPTION
+ION is a public networking database and single page web application built to provide visibility and offer connections to Oklahma STEM individuals from diverse backgrounds
 
 ### Table of Contents
 * [Website](##website)
