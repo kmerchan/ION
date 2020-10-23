@@ -91,6 +91,9 @@ h8 {
     width: 75px;
     height: auto;
 }
+.lead {
+    font-size: 16px;
+}
 .display-4 {
     font-size: 30px;
 }
@@ -211,24 +214,4 @@ h8 {
 }
 .dropdown:hover .dropbtnIdent {
     background-color: #7CB4B8;
-}
-#footer {
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    background: none repeat scroll 0 0 #7CB4B8;
-}
-img {
-    margin-right: 20px;
-}
-#github {
-    margin-top: 10px;
-}
-.container {
-    margin-top: 20px;
-    position: absolute;
-    right: 0;
-}
-#authors {
-    font-size: small;
 }
