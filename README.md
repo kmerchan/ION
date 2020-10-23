@@ -1,5 +1,5 @@
 # Inclusive Oklahoma Network (ION)
-INSERT PROJECT OVERVIEW/DESCRIPTION
+ION is a public networking database and single page web application built to provide visibility and offer connections to Oklahma STEM individuals from diverse backgrounds
 
 ### Table of Contents
 * [Website](##website)
@@ -142,18 +142,12 @@ Subclasses of Base Model:
 
 ## Front-End File Descriptions
 #### `web` directory contains all HTML and CSS content for website structure and style
-[index.html](/web/index.html) - STACI PLEASE FIX
-
-[new_index.html](/web/new_index.html) - STACI PLEASE FIX
+[index.html](/web/index.html) - HTML file to provide visual structure of web app
 
 ##### `web/styles` directory contains all CSS file references
-[common.css](/web/styles/common.css) - CSS file to provide styling to main body of web page
+[common.css](/web/styles/common.css) - CSS file to provide styling of web page
 
 [footer.css](/web/styles/footer.css) - CSS file to provide styling for footer of web page
-
-[header.css](/web/styles/header.css) - CSS file to provide styling for header of web page
-
-[new_common.css](/web/styles/new_common.css) - STACI PLEASE FIX
 
 ### Bugs
 No known bugs at this time. Please contact authors Kelsie or Staci if you find a bug.
