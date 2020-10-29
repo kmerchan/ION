@@ -45,6 +45,22 @@ class BaseModel():
                                    self.id,
                                    self.__dict__)
 
+    def to_dict(self):
+        """
+        returns dictionary representation of instance for JSON
+        """
+        dict_rep = {}
+        # datetimes will be changed to ISO format
+        time_format = datetime.isoformat
+        # save each attribute in object dict to dict_rep
+        for key, value in self.__dict__.items():
+            if key == "created_at" or key == "updated_at":
+                dict_rep[key] = str(time_format(value))
+            else:
+                dict_rep[key] = value
+        dict_rep["__class__"] = type(self).__name__
+        return dict_rep
+
     def save(self):
         """ this method updates time of change then saves new info """
         self.updated_at = datetime.utcnow()

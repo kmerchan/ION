@@ -126,14 +126,14 @@ def prompt_add_profile_object(cls=None):
 
 adding_data = True
 while (adding_data):
-    cls = input("Please let us know what type of data you would like to add {}: ".
-                format("(Identity, Profile, or Skills)"))
+    cls = input("Please tell us what type of data you would like to add{}".
+                format(" (Identity, Profile, or Skills): "))
     while cls != "Identity" and cls != "Profile" and cls != "Skills":
         retry = input("Something went wrong, would you like to retry? (y/n)")
         if retry is "n" or retry is "N":
             quit()
-        cls = input("Please input one of the following case-sensitive types {}: ".
-                    format("(Identity, Profile, or Skills)"))
+        cls = input("Please input one of the following case-sensitive types{}".
+                    format(" (Identity, Profile, or Skills): "))
     if cls == "Identity" or cls == "Skills":
         result = prompt_add_identity_or_skills_object(cls)
     if cls == "Profile":

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>ION</TITLE>
+  </HEAD>
+  <BODY>
+    <H1>Identity</H1>
+    <UL>
+      {% for identity in identities_result %}
+      <LI>{{identity.id}}: <B>{{identity.name}}</B></LI>
+      {% endfor %}
+    </UL>
+  </BODY>
+</HTML>
