@@ -790,3 +790,22 @@ class Test_DBStorage(TestCase):
         # tests that newly created unsaved obj is not in dictionary
         dict_key = "{}.{}".format("Skills", new_obj2.id)
         self.assertNotIn(dict_key, storage.all())
+
+    def test_storage_get_method(self):
+        """
+        test get method to retrieve specific object
+        """
+        for cls in ["Identity", "Profile", "Skills"]:
+            with self.subTest(cls=cls):
+                # tests get method when id does not exist
+                self.assertIs(storage.get(cls, -89), None)
+                # creates new obj to test with and saves to database
+                new_obj = classes[cls]()
+                new_obj.name = "test_name"
+                if cls == "Profile":
+                    new_obj.email = "test@testing.com"
+                new_obj.save()
+                # tests get method with valid class name and id
+                got_obj = storage.get(cls, new_obj.id)
+                self.assertIs(got_obj.__class__.__name__, cls)
+                self.assertEqual(got_obj.id, new_obj.id)

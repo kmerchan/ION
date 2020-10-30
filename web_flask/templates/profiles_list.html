@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>ION</TITLE>
+  </HEAD>
+  <BODY>
+    <H1>Profile</H1>
+    <UL>
+      {% for profile in profiles_result %}
+      <LI>{{profile.id}}: <B>{{profile.name}}</B></LI>
+      {% endfor %}
+    </UL>
+  </BODY>
+</HTML>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>ION</TITLE>
+  </HEAD>
+  <BODY>
+    <H1>Skills</H1>
+    <UL>
+      {% for skills in skills_result %}
+      <LI>{{skills.id}}: <B>{{skills.name}}</B></LI>
+      {% endfor %}
+    </UL>
+  </BODY>
+</HTML>

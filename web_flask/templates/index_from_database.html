@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lan="en">
+
+  <head>
+    <title>Inclusive Oklahoma Network</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/styles/common.css"/>
+    <link rel="stylesheet" href="../static/styles/footer.css"/>
+  </head>
+
+  <body style="font-family:'Quicksand';">
+    <div class="container-fluid">
+      <h1><a href="https://ibb.co/WGq3mGL"><img id="logo" src="https://i.ibb.co/WGq3mGL/ION-logo.png" alt="ION-logo" border="0"></a></h1>
+      <div class="row">
+	<div class="col-lg-4" style="background-color: #524948;"><p></p>
+	</div>
+	<div class="col-lg-8" style="background-color: #CAFE48;">
+	  <p id="tagline">Building Diversity in Oklahoma STEM through Visibility and Connection</p>
+	</div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row button-bar">
+	<div class="dropdown">
+	  <button class="dropbtnKnow">Knowledge In</button>
+	  <div class="dropdown-content">
+	    {% for skills in skills_result|sort(attribute='name') %}
+	    <a href="#">{{ skills.name }}</a>
+	    {% endfor %}
+	  </div>
+	</div>
+	<div class="dropdown">
+	  <button class="dropbtnIdent">Identifies As</button>
+	  <div class="dropdown-content">
+	    {% for identity in identities_result|sort(attribute='name') %}
+	    <a href="#">{{ identity.name }}</a>
+	    {% endfor %}
+	  </div>
+	</div>
+	<div>
+	  <button type="button" class="btn btn-secondary" id="search">Search</button>
+	</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+	<div class="jumbotron-1">
+	  <h1 class="display-4"><a href="https://ibb.co/kJ8MfJ5"><img id="k_pic" src="https://i.ibb.co/kJ8MfJ5/Kelsie-Icon.jpg" alt="Kelsie-Icon" border="0"></a>Kelsie Merchant</h1>
+	  <p class="lead"><strong>Company/School:</strong> Holberton School
+	    <br><strong>Experience:</strong> Engineering Physics, Photolithography, Software Engineering, Student Tutor
+	    <br><strong>Identity:</strong> Female</p>
+	  <hr class="my-4"><p style="font-size: 14px">I graduated from Colorado School of Mines with a B.S. in Engineering Physics, post-grad I began my journey into Software Engineering at Holberton School Tulsa. I plan to connect the science of Physics with the technology in Software Engineering to engineer cohesive, more effective products, and programs. I enjoy hiking adventures, helping others learn, problem-solving, and TED talks.</p>
+	  <a class="btn btn-primary btn-sm" href="#" role="button">Connect</a>
+	  <svg id="email" width="2.75em" height="2.55em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+	    <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+	  </svg>
+
+	  <a href="https://www.linkedin.com/in/kelsie-merchant-physics/" target="_blank" class="fa fa-linkedin"></a>
+	</div>
+      </div>
+      <div class="column">
+	<div class="jumbotron-2">
+	  <h1 class="display-4"><a href="https://ibb.co/F77gVxz"><img id="s_pic" src="https://i.ibb.co/F77gVxz/st-profile.png" alt="st-profile" border="0"></a>Staci Aaenson-Fletcher</h1>
+	  <p class="lead"><strong>Company/School:</strong> Holberton School
+	    <br><strong>Experience:</strong> Project Management, Software Engineering, Student Tutor, Technical Writing
+	    <br><strong>Identity:</strong> Female, LGBTQIA+</p>
+	  <hr class="my-4">
+	  <p style="font-size: 14px">My motto is ‘mission over money’ and, yes, I would love to help you! Currently, a Software Engineer with Holberton School Tulsa, teaching myself to program has been a welcomed challenge and an exercise in iterative problem-solving. I’ve worked in a variety of customer-facing industries and leadership roles that provided me ample experience in public speaking. I am passionate about how humans connect, think, and emote.</p>
+	  <a class="btn btn-primary btn-sm" href="#" role="button">Connect</a>
+	  <svg id="email" width="2.75em" height="2.55em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+	    <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+	  </svg>
+	  <a href="https://www.linkedin.com/in/staci-aaenson-fletcher/" target="_blank" class="fa fa-linkedin" style="color: white"></a>
+	</div>
+      </div>
+    </div>
+    <footer id="footer" class="container-fluid">
+      <div>
+	<img id="github" style="text-align:right" src="https://bit.ly/2H7klm7" height="50" width="50">
+      </div>
+      <div>
+	<p>
+	  <br>
+	  <a href="https://github.com/kmerchan" target="_blank" style="color: #CAFE48">Kelsie Merchant</a>
+	  <br>
+	  <a href="https://github.com/StaciAF" target="_blank" style="color: #CAFE48">Staci Aaenson-Fletcher</a>
+	</p>
+      </div>
+    </footer>
+  </body>
+
+</html>
