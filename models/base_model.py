@@ -59,6 +59,8 @@ class BaseModel():
             else:
                 dict_rep[key] = value
         dict_rep["__class__"] = type(self).__name__
+        if "_sa_instance_state" in dict_rep:
+            del dict_rep["_sa_instance_state"]
         return dict_rep
 
     def save(self):

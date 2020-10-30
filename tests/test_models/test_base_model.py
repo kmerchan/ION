@@ -222,10 +222,13 @@ class Test_BaseModel(TestCase):
         """
         new_obj = BaseModel()
         dict_rep = new_obj.to_dict()
+        # check if dict_rep is a dictionary
+        self.assertIsInstance(dict_rep, dict)
         # check if all keys from new_obj.__dict__ and __class__ in dict_rep
         for key in new_obj.__dict__:
             self.assertIn("{}".format(key), dict_rep)
         self.assertIn("__class__", dict_rep)
+        self.assertNotIn("_sa_instance_state", dict_rep)
         # check if dictionary values are correct type
         self.assertIsInstance(dict_rep["id"], str)
         self.assertIsInstance(dict_rep["created_at"], str)

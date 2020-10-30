@@ -23,7 +23,7 @@ def get_identities_by_profile(profile_id=None):
         for identity in profile.identities:
             # append each identity's dictionary
             result.append(identity.to_dict())
-        return jsonify(result.to_dict())
+        return jsonify(result)
 
     # if id not in database, abort
     abort(404)

@@ -23,7 +23,7 @@ def get_skills_by_profile(profile_id=None):
         for skills in profile.skills:
             # append each skill's dictionary
             result.append(skills.to_dict())
-        return jsonify(result.to_dict())
+        return jsonify(result)
 
     # if id not in database, abort
     abort(404)
