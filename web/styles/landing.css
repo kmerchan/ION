@@ -1,0 +1,236 @@
+.header {
+    padding: 3px;
+    text-align: left;
+    background: #CAFE48;
+    color: white;
+    font-size: 30px;
+    width: 100%;
+}
+body {
+    background-color: #D3D3D3;
+    color: #524948;
+}
+h1 {
+    padding-top: 20px;
+}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.top {
+    grid-area: 1 / 1 / 2 / 6;
+}
+.intro {
+    grid-area: 3 / 2 / 4 / 5;
+}
+.feat_1 {
+    grid-area: 4 / 2 / 5 / 3;
+}
+.feat_2 {
+    grid-area: 4 / 3 / 5 / 4;
+}
+.feat_3 {
+    grid-area: 4 / 4 / 5 / 5;
+}
+.about_k {
+    grid-area: 5 / 2 / 6 / 3;
+}
+.about_s {
+    grid-area: 5 / 4 / 6 / 5;
+}
+body {
+    background-color: #D3D3D3;
+}
+.container {
+    display: flex;
+}
+/* #bar {
+    background: #CAFE48;
+    font-family: Quicksand;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    height: 100px;
+    width: 100%;
+    background-size: cover;
+} */
+a:link {
+    color: #524948;
+    text-decoration: none;
+}
+#home {
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+#sections {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+#logo {
+    border-radius: 15px;
+}
+.the_why {
+    color: #524948;
+    margin: auto;
+    width: 80%;
+    background-color: #F0F0F0;
+    border-style: solid;
+    border-color: #524948;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.display-4 {
+    color: #7CB4B8;
+}
+.lead {
+    font-size: 16px;
+}
+.details {
+    font-size: 16px;
+}
+#intro {
+    padding-top: 20px;
+}
+#features {
+    padding-top: 20px;
+}
+.feat_1 {
+    color: #524948;
+    margin: auto;
+    width: 31%;
+    background-color: #F0F0F0;
+    border-style: solid;
+    border-color: #524948;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 50px;
+    color: #524948;
+}
+.feat_2 {
+    margin: auto;
+    width: 31%;
+    background-color: #F0F0F0;
+    border-style: solid;
+    border-color: #524948;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 50px;
+    color: #524948;
+}
+.feat_3 {
+    margin: auto;
+    width: 31%;
+    background-color: #F0F0F0;
+    border-style: solid;
+    border-color: #524948;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+.column {
+    float: left;
+    width: 50%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#crew {
+    margin-top: 60px;
+}
+#email {
+    cursor: pointer;
+}
+.jumbotron-1 {
+    margin: auto;
+    width: 80%;
+    background-color: #F0F0F0;
+    border-style: solid;
+    border-color: #524948;
+    border-radius: 15px;
+    padding: 10px;
+    margin-right: 30px;
+    margin-top: 50px;
+}
+#k_pic {
+    border-radius: 50%;
+    width: 75px;
+    height: auto;
+}
+.jumbotron-2 {
+    margin: auto;
+    width: 80%;
+    background-color: #F0F0F0;
+    border-style: solid;
+    border-color: #524948;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 50px;
+}
+#s_pic {
+    border-radius: 50%;
+    width: 75px;
+    height: auto;
+}
+.lead {
+    font-size: 16px;
+}
+.display-4 {
+    font-size: 30px;
+}
+.btn-sm {
+    background-color: #57467B;
+    border-color: #57467B;
+    border-size: 5px;
+}
+.btn-sm:hover {
+    background-color: #57467B;
+    border-color: #524948;
+}
+.fa {
+    display: inline-block;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    font-size: 18px;
+    width: 25px;
+    height: auto;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px 5px 0px;
+}
+.fa:hover {
+    opacity: 0.7;
+    color: white;
+    text-decoration: none;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+#email:hover {
+    opacity: 0.7;
+}
+iframe {
+    scrolling-attribute: scrolling="no";
+    border-radius: 3px;
+    border-top: solid;
+    border-left: solid;
+    border-bottom: solid;
+    border-right: solid;
+}
