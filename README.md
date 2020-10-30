@@ -19,9 +19,9 @@ If you would like to add your profile information to the website, please fill ou
 
 ## Installation and Usage
 If you are hoping to access and utilize the ION site as a user, please click on the link above to access the website in your browser. However, if you are trying to run the source code for the project, please follow these installation and usage steps to configure your web server:
-### Web Server Configuration:
+### Server Configuration:
 * First, access your own server to host the site.  The ION project is hosted on Google Cloud Platform (GCP) Compute Engine Virtual Machine (VM).
-* Install Nginx with the following commands:
+* Install Nginx web server with the following commands:
   * `sudo apt-get -y update`
   * `sudo apt-get -y install nginx`
   * `sudo emacs /var/www/html/index.html` and type content
@@ -42,6 +42,11 @@ If you are hoping to access and utilize the ION site as a user, please click on 
   * `sudo pip3 install mysqlclient==1.3.10`
 * Install SQLAlchemy for database Object Relational Mapping (ORM) with the following commands:
   * `pip3 install SQLAlchemy==1.2.5`
+* Install Flask and Flask_CORS to dynamically render HTML based on current database with the following commands:
+  * `pip3 install Flask`
+  * `pip3 install flask_cors`
+* Install Gunicorn application server with the following commands:
+  * `pip3 install gunicorn flask`
 
 ### Usage:
 * To access the source code, `git clone` this repository onto your web server and use `cd` to move into the repository
@@ -85,6 +90,7 @@ This project utilizes MySQL to store and maintain the database with three primar
   * `name` class attribute - each row can also be identified by the object's name
   * `def __init__(self, *args, **kwargs)` method - public instance method that instantiates new instances of the class
   * `def __str__(self)` method - public instance method that returns the string representation of the instance
+  * `def to_dict(self)` method - public instance method that returns the dictionary representation of the instance
   * `def save(self)` method - public instance method that re-sets updated_at attribute and calls database storage engine method to add and commit the instance to the MySQL tables
   * `def delete(self)` method - public instance method that calls database storage method to remove and commit the instance to the MySQL tables
 
@@ -123,6 +129,7 @@ Subclasses of Base Model:
   * `__session` private class attribute - binds the session to the engine for Object Relational Mapping (ORM)
   * `def __init__(self)` - public instance method to initialize new storage engine using MySQL user and database information from environment variables
   * `def all(self, cls=None)` - public instance method to query all or specific class of objects from the current database
+  * `def get(self, cls=None, id=None)` - public instance method to retrieve specific object by class name and id from current database
   * `def save(self)` - public instance method to commit any changes from the current database session to MySQL database
   * `def new(self, obj=None)` - public instance method to add new object to the current database session and calls save method to commit to database
   * `def delete(self, obj=None)` - public instance method to remove object from the current database session and calls save method to commit to database

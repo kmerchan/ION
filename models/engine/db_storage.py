@@ -59,6 +59,19 @@ class DBStorage():
                     all_dict[key] = obj
         return (all_dict)
 
+    def get(self, cls=None, id=None):
+        """
+        retrieves specific object by class name (cls) and id
+        """
+        if cls is None or id is None:
+            return None
+        all_objs = self.all(cls)
+        if all_objs is not {}:
+            for obj in all_objs.values():
+                if id == obj.id:
+                    return obj
+        return None
+
     def save(self):
         """ this method commits changes to current DB session """
         self.__session.commit()

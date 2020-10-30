@@ -216,6 +216,32 @@ class Test_BaseModel(TestCase):
         self.assertEqual(str(new_obj),
                          "[BaseModel.{}] {}".format(obj_id, obj_dict))
 
+    def test_to_dict(self):
+        """
+        tests the to_dict method returns the correct format
+        """
+        new_obj = BaseModel()
+        dict_rep = new_obj.to_dict()
+        # check if dict_rep is a dictionary
+        self.assertIsInstance(dict_rep, dict)
+        # check if all keys from new_obj.__dict__ and __class__ in dict_rep
+        for key in new_obj.__dict__:
+            self.assertIn("{}".format(key), dict_rep)
+        self.assertIn("__class__", dict_rep)
+        self.assertNotIn("_sa_instance_state", dict_rep)
+        # check if dictionary values are correct type
+        self.assertIsInstance(dict_rep["id"], str)
+        self.assertIsInstance(dict_rep["created_at"], str)
+        self.assertIsInstance(dict_rep["updated_at"], str)
+        self.assertIsInstance(dict_rep["__class__"], str)
+        # check if dictionary values are correct
+        self.assertEqual(dict_rep["id"], new_obj.id)
+        self.assertEqual(dict_rep["__class__"], new_obj.__class__.__name__)
+        time = str(datetime.isoformat(new_obj.created_at))
+        self.assertEqual(dict_rep["created_at"], time)
+        time = str(datetime.isoformat(new_obj.updated_at))
+        self.assertEqual(dict_rep["updated_at"], time)
+
     # save() and delete() methods are tested in subclass unit tests:
     # tested in subclasses because these methods call on database storage
     # to map class information to database
