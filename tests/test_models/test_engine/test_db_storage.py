@@ -16,6 +16,7 @@ from os import getenv
 import pep8
 from time import sleep
 from unittest import TestCase
+# establishes dictionary reference between class name and class itself
 classes = {"Identity": Identity, "Profile": Profile, "Skills": Skills}
 # sets variables from os environment variables set by user
 ION_MYSQL_HOST = getenv('ION_MYSQL_HOST')
