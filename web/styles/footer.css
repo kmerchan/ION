@@ -1,3 +1,4 @@
+/* style in main footer div */
 #footer {
     width: 100%;
     margin-top: 50px;
@@ -7,17 +8,21 @@
     justify-content: flex-end;
     align-items: center;
 }
+/* style for img tag to align right */
 img {
     margin-right: 20px;
 }
+/* style to center github image */
 #github {
     margin-top: 10px;
 }
+/* style for container div to position in footer */
 .container {
     margin-top: 20px;
     position: absolute;
     right: 0;
 }
+/* style for font used for author notation */
 #authors {
     font-size: small;
 }

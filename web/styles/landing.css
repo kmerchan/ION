@@ -1,3 +1,4 @@
+/* style for header bar alignment, position, color details */
 .header {
     padding: 3px;
     text-align: left;
@@ -6,13 +7,16 @@
     font-size: 30px;
     width: 100%;
 }
+/* style for body background and font color */
 body {
     background-color: #D3D3D3;
     color: #524948;
 }
+/* style for position of heading */
 h1 {
     padding-top: 20px;
 }
+/* style for grid in parent div, strucure of body */
 .parent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -20,60 +24,59 @@ h1 {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
+/* style for grid area in div */
 .top {
     grid-area: 1 / 1 / 2 / 6;
 }
+/* style for grid area in div */
 .intro {
     grid-area: 3 / 2 / 4 / 5;
 }
+/* style for grid area in div */
 .feat_1 {
     grid-area: 4 / 2 / 5 / 3;
 }
+/* style for grid area in div */
 .feat_2 {
     grid-area: 4 / 3 / 5 / 4;
 }
+/* style for grid area in div */
 .feat_3 {
     grid-area: 4 / 4 / 5 / 5;
 }
+/* style for grid area in div */
 .about_k {
     grid-area: 5 / 2 / 6 / 3;
 }
+/* style for grid area in div */
 .about_s {
     grid-area: 5 / 4 / 6 / 5;
 }
-body {
-    background-color: #D3D3D3;
-}
+/* style for container div as flex-box */
 .container {
     display: flex;
 }
-/* #bar {
-    background: #CAFE48;
-    font-family: Quicksand;
-    position: fixed;
-    left: 0;
-    right: 0;
-    padding: 15px;
-    height: 100px;
-    width: 100%;
-    background-size: cover;
-} */
+/* style for a links text color and remove decoration */
 a:link {
     color: #524948;
     text-decoration: none;
 }
+/* style for home div section position and font size */
 #home {
     padding-bottom: 5px;
     font-size: 20px;
 }
+/* style for sectioned nav buttons */
 #sections {
     display: flex;
     justify-content: flex-start;
     font-size: 20px;
 }
+/* style for logo shape */
 #logo {
     border-radius: 15px;
 }
+/* style for div shape, size, font color */
 .the_why {
     color: #524948;
     margin: auto;
@@ -85,21 +88,27 @@ a:link {
     padding: 10px;
     margin-top: 50px;
 }
+/* style for font color */
 .display-4 {
     color: #7CB4B8;
 }
+/* style for alt section font-size */
 .lead {
     font-size: 16px;
 }
+/* style for alt section font-size */
 .details {
     font-size: 16px;
 }
+/* style for div position */
 #intro {
     padding-top: 20px;
 }
+/* style for div position */
 #features {
     padding-top: 20px;
 }
+/* style for div position size and shape - background and font color */
 .feat_1 {
     color: #524948;
     margin: auto;
@@ -112,6 +121,7 @@ a:link {
     margin-top: 50px;
     color: #524948;
 }
+/* style for div position size and shape - background and font color */
 .feat_2 {
     margin: auto;
     width: 31%;
@@ -123,6 +133,7 @@ a:link {
     margin-top: 50px;
     color: #524948;
 }
+/* style for div position size and shape - background and font color */
 .feat_3 {
     margin: auto;
     width: 31%;
@@ -133,25 +144,31 @@ a:link {
     padding: 10px;
     margin-top: 50px;
 }
+/* style for row div as flex-box */
 .row {
     display: flex;
     justify-content: space-evenly;
 }
+/* style for position and size of div */
 .column {
     float: left;
     width: 50%;
 }
+/* style for attribute after row div */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
+/* style for heading text position */
 #crew {
     margin-top: 60px;
 }
+/* style for cursor type, email button */
 #email {
     cursor: pointer;
 }
+/* style for left-most profile card position, color, size */
 .jumbotron-1 {
     margin: auto;
     width: 80%;
@@ -163,11 +180,13 @@ a:link {
     margin-right: 30px;
     margin-top: 50px;
 }
+/* style for profile img size, shape */
 #k_pic {
     border-radius: 50%;
     width: 75px;
     height: auto;
 }
+/* style for left-most profile card position, color, size */
 .jumbotron-2 {
     margin: auto;
     width: 80%;
@@ -178,26 +197,32 @@ a:link {
     padding: 10px;
     margin-top: 50px;
 }
+/* style for profile img size, shape */
 #s_pic {
     border-radius: 50%;
     width: 75px;
     height: auto;
 }
+/* style for font-size in alt section of profile card */
 .lead {
     font-size: 16px;
 }
+/* style for font-size in alt section of profile card */
 .display-4 {
     font-size: 30px;
 }
+/* style for github button color, shape */
 .btn-sm {
     background-color: #57467B;
     border-color: #57467B;
     border-size: 5px;
 }
+/* style for hover effect github button */
 .btn-sm:hover {
     background-color: #57467B;
     border-color: #524948;
 }
+/* style for social media button position alignment size and shape */
 .fa {
     display: inline-block;
     padding-bottom: 8px;
@@ -210,22 +235,27 @@ a:link {
     text-decoration: none;
     margin: 5px 5px 5px 0px;
 }
+/* style for hover effect with social media button */
 .fa:hover {
     opacity: 0.7;
     color: white;
     text-decoration: none;
 }
+/* style for LinkedIn button colors */
 .fa-linkedin {
     background: #007bb5;
     color: white;
 }
+/* style for Twitter button colors */
 .fa-twitter {
     background: #55ACEE;
     color: white;
 }
+/* style for hover effect with email button */
 #email:hover {
     opacity: 0.7;
 }
+/* style for feature GIFs border size and shape */ 
 iframe {
     scrolling-attribute: scrolling="no";
     border-radius: 3px;
