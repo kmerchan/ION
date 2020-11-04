@@ -7,6 +7,7 @@ from api.views import app_views
 from flask.json import jsonify
 
 
+# defines API route that gives status of API
 @app_views.route('/status', strict_slashes=False)
 def show_status():
     """
