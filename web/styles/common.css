@@ -1,19 +1,24 @@
+/* style for body background and font color */
 body {
     background-color: #D3D3D3;
     color: #524948;
 }
+/* style for heading position and font color */
 h1 {
     padding-top: 20px;
     color: #524948;
 }
+/* style for logo size and shape */
 #logo {
     width: 100px;
     height: auto;
     border-radius: 50%;
 }
+/* style for heading font color */
 h8 {
     color: #524948;
 }
+/* style for header bar position, alignment, and font color */
 .col-lg-4 {
     text-align: left;
     color: #524948;
@@ -27,6 +32,7 @@ h8 {
     top: 50%;
     transform: translateY(-50%);
 }
+/* style for header bar postion, alignment, and font color*/
 .col-lg-8 {
     text-align: left;
     color: #524948;
@@ -40,26 +46,32 @@ h8 {
     top: 50%;
     transform: translateY(-50%);
 }
+/* style for mission statement font styling and position */
 #tagline {
     font-size: 20px;
     font-style: italic;
     padding-top: 10px;
 }
+/* style for search button color */
 #search {
     background-color: #57467B;
 }
+/* style to add hover effect details to search button */
 #search:hover {
     background-color: #57467B;
     border-color: #524948;
     color: #7CB4B8;
 }
+/* style for row style div in flex-box */
 .row {
     display: flex;
     justify-content: space-evenly;
 }
+/* style for profile card spacing size */
 .column {
     flex: 50%;
 }
+/* style for left-most profile card position, alignment, color */
 .jumbotron-1 {
     margin: auto;
     width: 80%;
@@ -71,11 +83,13 @@ h8 {
     margin-right: 30px;
     margin-top: 50px;
 }
+/* style for left-most profile picture size and shape */
 #k_pic {
     border-radius: 50%;
     width: 75px;
     height: auto;
 }
+/* style for right-most profile card position, alignment, color */
 .jumbotron-2 {
     margin: auto;
     width: 80%;
@@ -86,27 +100,32 @@ h8 {
     padding: 10px;
     margin-top: 50px;
 }
+/* style for right-most profile picture size and shape */
 #s_pic {
     border-radius: 50%;
     width: 75px;
     height: auto;
 }
+/* style for profile section text font-size */
 .lead {
     font-size: 16px;
 }
+/* style for profile section text font-size */
 .display-4 {
     font-size: 30px;
 }
+/* style for profile card connect button color, sizing */
 .btn-sm {
     background-color: #57467B;
     border-color: #57467B;
     border-size: 5px;
 }
+/* style for profile card connect button hover effect details */
 .btn-sm:hover {
     background-color: #57467B;
     border-color: #524948;
 }
-
+/* style for social media button position, alignment, and size details */
 .fa {
     display: inline-block;
     padding-bottom: 8px;
@@ -119,18 +138,22 @@ h8 {
     text-decoration: none;
     margin: 5px 5px 5px 0px;
 }
+/* style for social media button hover effect details */
 .fa:hover {
     opacity: 0.7;
     color: white;
     text-decoration: none;
 }
+/* style for LinkedIn button */
 .fa-linkedin {
     background: #007bb5;
     color: white;
 }
+/* style for email button hover effect details */
 #email:hover {
     opacity: 0.7;
 }
+/* style for knowledge dropdown position, alignment, size, color */
 .dropbtnKnow {
     color: white;
     display: inline-block;
@@ -142,6 +165,7 @@ h8 {
     background-color: #57467B;
     z-index: 1;
 }
+/* style for arrow indicator in knowledge dropdown menu */
 .dropbtnKnow:after {
     content: "\00BB";
     font: normal normal normal 20px/1 Quicksand;
@@ -153,6 +177,7 @@ h8 {
     position: static;
     pointer-events: none;
 }
+/* style for identity dropdown position, alignment, size, color */
 .dropbtnIdent {
     color: white;
     display: inline-block;
@@ -164,6 +189,7 @@ h8 {
     background-color: #57467B;
     z-index: -1;
 }
+/* style for arrow indicator in knowledge dropdown menu */
 .dropbtnIdent:after {
     content: "\00BB";
     font: normal normal normal 20px/1 Quicksand;
@@ -188,7 +214,7 @@ h8 {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-/* Links inside the dropdown */
+/* style for links inside dropdown */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -196,22 +222,23 @@ h8 {
     display: block;
     z-index: 1;
 }
-/* Change color of dropdown links on hover */
+/* change color of dropdown links on hover */
 .dropdown-content a:hover {
     background-color: #ddd;
     display: block;
 }
-/* Show the dropdown menu on hover */
+/* show dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: inline-block;
     overflow: hidden;
     z-index: 1;
 }
-/* Change the background color of the dropdown button when the dropdown content is shown */
+/* style for background color of knowlege dropdown button when the content is shown */
 .dropdown:hover .dropbtnKnow {
     background-color: #7CB4B8;
     overflow: hidden;
 }
+/* style for background color of identity dropdown button when the content is shown */
 .dropdown:hover .dropbtnIdent {
     background-color: #7CB4B8;
 }
