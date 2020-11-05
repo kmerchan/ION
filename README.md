@@ -1,8 +1,9 @@
 # Inclusive Oklahoma Network (ION)
-ION is a public networking database and single page web application built to provide visibility and offer connections to Oklahma STEM individuals from diverse backgrounds
+ION is a public networking database and single page web application built to provide visibility and offer connections to Oklahoma STEM individuals from diverse backgrounds. The goal is for the ION site to help Oklahomans find relatable and reachable connections to local community leaders, fostering impactful relationships, mentoring, and role modeling to highlight STEM individuals from diverse backgrounds.
 
 ### Table of Contents
 * [Website](##website)
+* [ION Project Story](##ion)
 * [Installation and Usage](##installation)
 * [Database](##database)
 * [Back-End File Descriptions](##back)
@@ -10,15 +11,23 @@ ION is a public networking database and single page web application built to pro
 * [Bugs](###bugs)
 * [Authors](##authors)
 * [Upcoming Features](##upcoming)
+* [Licensing](##licensing)
 
 ## Website
-Please visit the ION website [here](http://34.121.53.105/) to build diversity in Oklahoma STEM through visibility and connection!
+Please visit the ION website at [www.inclusiveok.tech](http://www.inclusiveok.tech) to build diversity in Oklahoma STEM through visibility and connection!
 <img src="https://i.ibb.co/17FFwNx/Screenshot-2020-10-22-at-1-17-56-PM.png" alt="ION website" border="0">
 
 If you would like to add your profile information to the website, please fill out this [sign up form](https://forms.gle/Jp9YPVPZgxaS7ZAXA) and your profile will be created and added for others to connect with you.  Thank you!
 
+## ION Project Story
+This ION project stems from the passion authors Kelsie and Staci have for building a strong culture of Diversity, Inclusion, Equity, and Belonging at Holberton Tulsa and within their local community. Kelsie and Staci identify as two of the four women in Holberton Tulsa's first cohort of coding students, and Staci also identifies as a proud legally married queer woman. Driven by their personal experiences and research into why diversity gaps persist in STEM (Science, Technology, Engineering, and Mathematics), Kelsie and Staci decided to develop the Inclusive Oklahoma Network (ION) as a public network to foster connections and highlight diverse STEM professionals and upcoming talent. While other organizations may have their own directories, ION is open and available for anyone to access without having to pay dues or be an existing member. ION helps young professionals build their network as they explore their areas of interest and helps STEM-adjacent community members, such as teachers or non-profits, easily connect with STEM leaders their students or audience can identify with. The goal is to make it as simple as possible for local Oklahoma communities to find diverse STEM role models, peers, and mentors through reducing barriers in networking and hiring. Additionally, ION helps to increase retention through building a community that supports STEM individuals throughout their career. Imposter syndrome leads many STEM individuals to feel they cannot keep up with the curriculum and leave. While imposter syndrome can affect anyone, it is felt more often by those that already feel like an only in their classes, school, and community. ION helps to build tangible connections where users can hear from others in the community with shared experiences, helping them feel less alone and allowing shared advice on overcoming obstacles.
+
+For more information on the inspiration for ION or how the ION project came to be, please check out these blogs by the ION authors:
+[Kelsie Merchant](https://www.linkedin.com/pulse/ion-project-kelsie-merchant/)
+[Staci Aaenson-Fletcher](https://www.linkedin.com/pulse/inclusive-oklahoma-network-staci-aaenson-fletcher-she-her-/)
+
 ## Installation and Usage
-If you are hoping to access and utilize the ION site as a user, please click on the link above to access the website in your browser. However, if you are trying to run the source code for the project, please follow these installation and usage steps to configure your web server:
+If you are hoping to access and utilize the ION site as a user, please visit [www.inclusiveok.tech](http://www.inclusiveok.tech) to access the website in your browser. However, if you are trying to run the source code for the project, please follow these installation and usage steps to configure your web server:
 ### Server Configuration:
 * First, access your own server to host the site.  The ION project is hosted on Google Cloud Platform (GCP) Compute Engine Virtual Machine (VM).
 * Install Nginx web server with the following commands:
@@ -57,6 +66,12 @@ If you are hoping to access and utilize the ION site as a user, please click on 
   * This script sets all testing environment variables and runs unit tests.
   * To run all unit tests: `./run_tests.sh`
   * To run specific test file: `./run_tests.sh <path to test file>`
+* To run the web content dynamically, please run the Bash script [run_bind_gunicorn.sh](/run_bind_gunicorn.sh)
+  * This script sets all envrionment variables to connect to the main ION database for deployment.
+  * The script also binds the Flask application from [web_flask.flask_for_index](/web_flask/flask_for_index.py) to the Gunicorn application server.
+
+### Contributing:
+If you would like to contribute to the ION project, please contact authors Kelsie and Staci.
 
 ## Database
 This project utilizes MySQL to store and maintain the database with three primary tables and two secondary tables:
@@ -160,11 +175,17 @@ Subclasses of Base Model:
 No known bugs at this time. Please contact authors Kelsie or Staci if you find a bug.
 
 ## Authors
-Kelsie Merchant - [GitHub](https://github.com/kmerchan/) / [email: kelsie.merchant@holbertonschool.com](kelsie.merchant@holbertonschool.com)
+Kelsie Merchant - [GitHub](https://github.com/kmerchan/) / [email: kelsie.merchant@holbertonschool.com](kelsie.merchant@holbertonschool.com) / [LinkedIn](https://www.linkedin.com/in/kelsie-merchant-physics/)
 
-Staci Aaenson-Fletcher - [GitHub](https://github.com/StaciAF) / [email: staci.aaensonfletcher@holbertonschool.com](staci.aaensonfletcher@holbertonschool.com)
+Staci Aaenson-Fletcher - [GitHub](https://github.com/StaciAF) / [email: staci.aaensonfletcher@holbertonschool.com](staci.aaensonfletcher@holbertonschool.com) / [LinkedIn](https://www.linkedin.com/in/staci-aaenson-fletcher/)
 
 ## Upcoming Features
-We are currently working on making the website more dynamic to allow users to search by filters.
+We are currently working on making the website more dynamic to allow users to search by filters.  We are adding Javascript and jQuery to listen for user clicks and will utilize the API routes found in /api/views/ to re-populate the profile cards based on how the user is filtering results.
 
 Please check back to see more features currently in development.
+
+## Related Projects
+This project is the culmination of technical project-based learning, especially higher-level langauges, such as Python, MySQL databases, HTML and CSS, and web deployment.  For related projects, please check out Kelsie and Staci's individual GitHub repositories.
+
+## Licensing
+Public Domain. No copy write protection.
